@@ -15,3 +15,14 @@ if "free" in txt :
 else:
     print("No!")
 
+# slice string
+print("------string slicing-----")
+print(txt[4:8])
+print(txt[:15])
+print(txt[16:])
+print("--------negative indexing!------")
+neg_txt = "negative indexing"
+print(neg_txt[-8:])
+print(neg_txt[-8:-3])
+
+
