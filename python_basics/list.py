@@ -66,4 +66,3 @@ new_f_list = [x for x in fruits if "a" in x]
 print(new_f_list)
 
 
-
