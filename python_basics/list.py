@@ -65,4 +65,21 @@ new_f_list.clear()
 new_f_list = [x for x in fruits if "a" in x]
 print(new_f_list)
 
+# print every second element from the list
+l = [1,"hello",2,"sha",3]
+print(l[::2])
+# print(l[::3])
+
+# list in the reverse order
+print(l[::-1])
+
+# operations on list
+l1 = [0,2]*5
+print(l1)
+
+# unpacking every element in a word
+var = list("Shahriar")
+print(var)
+
+
 
