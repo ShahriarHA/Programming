@@ -62,3 +62,25 @@ print(my_tuple1)
 # multiply tuple items
 print(my_tuple1 * 2)
 
+# tuple nesting
+tu1 = (1,2,3,4)
+tu2 = ("python",)*3 #repeating iteems
+nest = (tu1,tu2)
+print(nest)
+
+# unpacking tuple
+print(tuple("shahriar"))
+
+# nesting tuple within list
+tpl = ([1,2,3],)
+print(type(tpl))
+ltp = list(tpl)
+print(ltp,type(ltp))
+ltp.append([222,34])
+print(ltp)
+
+tpl = tuple(ltp)
+print(tpl)
+
+
+
