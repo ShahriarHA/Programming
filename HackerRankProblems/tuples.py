@@ -1,7 +1,5 @@
-# n = int(input().strip())
-# t = tuple((map(int,input().split())))
-t = (12,)
-print(type(t))
-print(hash(t))
-
-
+if __name__ == '__main__':
+    n = int(input())
+    integer_list = map(int, input().split())
+    t = tuple(integer_list)
+    print(hash(t))
