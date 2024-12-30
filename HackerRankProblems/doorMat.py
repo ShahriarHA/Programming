@@ -4,23 +4,13 @@ if __name__ == '__main__':
     matSizeInput = sys.stdin.readline().split()
     n = int(matSizeInput[0])
     m = int(matSizeInput[1])
-    # print(n,m)
-    # print(type(n))
+
     designPattern1 = "-"
     designPattern2 = ".|."
     midOfDesignPattern = (m-len(designPattern2))//2
-    print(midOfDesignPattern)
-    print(n//2)
-    # print(len(designPattern2))
-    # for _ in range(0,(n//2)+1):
-    #     designPattern = ""
-    #     for i in range(0,(m-len(designPattern2)+1)):
-    #         if i == midOfDesignPattern:
-    #             designPattern = designPattern + designPattern2
-    #         else:
-    #             designPattern = designPattern + designPattern1
-    #     print(designPattern)
-    # print(len(designPattern))
+    # print(midOfDesignPattern)
+    # print(n//2)
+
     DesignPattern2List = []
     designPattern = ""
     for i in range(0, n//2):
@@ -29,7 +19,7 @@ if __name__ == '__main__':
         else:
             designPattern += designPattern2
         DesignPattern2List.append(designPattern)
-    print(DesignPattern2List)
+    # print(DesignPattern2List)
 
     finalDesignPatternList = []
     for _ in range(0,n//2):
@@ -37,18 +27,44 @@ if __name__ == '__main__':
         for _ in range(0,m):
             des1 += designPattern1
         finalDesignPatternList.append(des1)
-    print(finalDesignPatternList)
-    print(len(finalDesignPatternList[0]))
+    # print(finalDesignPatternList)
+    # print(len(finalDesignPatternList[0]))
 
-    print("---main work---")
+    fList = []
+    for x in DesignPattern2List:
+        for y in finalDesignPatternList:
+            midString = y[:midOfDesignPattern]
+            y = midString + x + midString
+        # print(y,len(y))
+        fList.append(y)
+        midOfDesignPattern -= 3
 
-    for j in range(0,len(finalDesignPatternList)):
-        # print(finalDesignPatternList[j][midOfDesignPattern:midOfDesignPattern+3])
-        midStringValue = finalDesignPatternList[j][midOfDesignPattern:midOfDesignPattern+3]
-        print(midStringValue,designPattern2)
+    # print(finalDesignPatternList)
+    # print(fList)
+    message = "WELCOME"
+    messageLen = len(message)
+    lenFDPL = len(finalDesignPatternList[0])
+    centerOfMess = (lenFDPL - messageLen) // 2
+    # print(centerOfMess)
+    fMessage = finalDesignPatternList[0][:centerOfMess] + message + finalDesignPatternList[0][:centerOfMess]
+    # print(fMessage,len(fMessage))
+    
 
-    print(finalDesignPatternList)
+    # print(fList)
 
+    fflist = []
+    
+    for m in fList:
+        # print(m)
+        fflist.append(m)
+    fflist.append(fMessage)
 
+    fList.reverse()
+    for a in fList:
+        fflist.append(a)
+    
+    print("------printin final list--------")
+    for f in fflist:
+        print(f)
 
 
