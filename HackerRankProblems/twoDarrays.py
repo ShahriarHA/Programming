@@ -3,40 +3,16 @@ if __name__ == '__main__':
 
     for _ in range(6):
         arr.append(list(map(int, input().rstrip().split())))
-    print(arr)
-    
-    dimensionOfA = len(arr)
-    subSetADim = 3
-    mulOFSubA = []
-    for i in range(dimensionOfA):
-        if i*subSetADim <= dimensionOfA:
-            mulOFSubA.append(i*subSetADim)
-    print(mulOFSubA)
-
-    # main work
-    arr2=[]
-    len_mulOFSubA = len(mulOFSubA)
-    for s in range(len_mulOFSubA):
-        # print(mulOFSubA[s])
-        if mulOFSubA[s] == dimensionOfA:
-            print("array itteration is done!")
-            break
-        else:
-            # print(mulOFSubA[s])
-            for k in range(dimensionOfA):
-                sumation = 0
-                j = k
-                arr3=[]
-                while(j < subSetADim+k):
-                    i = mulOFSubA[s]
-                    while(i < mulOFSubA[s+1]):
-                        print(arr[j][i])
-                        # arr3.append(arr[j][1])
-                        i+=1
-                    j+=1
-                arr2.append(arr3)
-
-    print(arr2)
+    # print(arr)
+    hourGlassArr = []
+    dimesionOfArr = len(arr)
+    for i in range(dimesionOfArr):
+        for j in range(dimesionOfArr):
+            if (i+2 < dimesionOfArr) and (j+2 < dimesionOfArr):
+                hourGlassValue = arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[i+1][j+1] + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]
+                hourGlassArr.append(hourGlassValue)
+    # print(hourGlassArr)
+    print(max(hourGlassArr))    
 
 
 
