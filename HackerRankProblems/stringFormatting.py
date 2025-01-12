@@ -8,15 +8,15 @@
 
 def print_formatted(number):
     # your code goes here
+    width = len("{0:b}".format(number))
     for d in range(1,number+1):
-        d_padded = "{:>5}".format(d)
         o = "{0:o}".format(d)
-        o_padded = "{:>5}".format(o)
         hexA = "{0:X}".format(d)
-        hexA_padded = "{:>5}".format(hexA)
         b = "{0:b}".format(d)
-        b_padded = "{:>5}".format(b)
-
+        d_padded = "{:>{w}}".format(d,w=width)
+        o_padded = "{:>{w}}".format(o,w = width)
+        hexA_padded = "{:>{w}}".format(hexA,w=width)
+        b_padded = "{:>{w}}".format(b,w=width)
         print(f"{d_padded} {o_padded} {hexA_padded} {b_padded}")
         # print(d)
 if __name__ == '__main__':
