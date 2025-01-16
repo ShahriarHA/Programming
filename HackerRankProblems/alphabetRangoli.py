@@ -26,7 +26,7 @@ def print_rangoli(size):
             # print(centerRangoli)
             listOfRangolies.append(centerRangoli)
         else:
-            x = centerRangoli[midOfCenterRangoli:midOfCenterRangoli+4]
+            x = centerRangoli[midOfCenterRangoli-1:midOfCenterRangoli+3]
             y = centerRangoli.replace(x,"")
             y = "--" + y + "--"
             # print(y)
