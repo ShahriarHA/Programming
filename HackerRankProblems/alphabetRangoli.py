@@ -15,9 +15,35 @@ def print_rangoli(size):
     # print(alphabetSequence)
     revAlphaSequence = alphabetSequence[::-1]
     FinalAlphaSequ = revAlphaSequence[:len(revAlphaSequence)-1] + alphabetSequence
-    print(FinalAlphaSequ)
+    # print(FinalAlphaSequ)
     centerRangoli = FinalAlphaSequ.replace(" ","-")
-    print(centerRangoli)
+    # print(centerRangoli)
+    midOfCenterRangoli = len(centerRangoli) // 2
+    # print(centerRangoli[midOfCenterRangoli])
+    listOfRangolies = []
+    for i in range(size):
+        if i == 0:
+            # print(centerRangoli)
+            listOfRangolies.append(centerRangoli)
+        else:
+            x = centerRangoli[midOfCenterRangoli:midOfCenterRangoli+4]
+            y = centerRangoli.replace(x,"")
+            y = "--" + y + "--"
+            # print(y)
+            listOfRangolies.append(y)
+            centerRangoli = y
+    listOfRangolies.reverse()
+    # print(listOfRangolies)
+    for i in listOfRangolies:
+        print(i)
+        # pass
+    listOfRangolies.reverse()
+    for j in range(len(listOfRangolies)):
+        if j == 0:
+            continue
+        else:
+            print(listOfRangolies[j])
+
 
 
 
