@@ -1,8 +1,27 @@
 import sys
 
 class Solution:
+    def __init__(self):
+        self.stack = []
+        self.queue = []
     # Write your code here
-    pass
+    def pushCharacter(self,a):
+        # pass
+        self.stack.append(a)
+    def enqueueCharacter(self,b):
+        # pass
+        self.queue.append(b)
+    def popCharacter(self):
+        # pass
+        return self.stack.pop()
+    def dequeueCharacter(self):
+        # pass
+        return self.queue.pop(0)
+    def printQS(self):
+        print(self.queue)
+        print(self.stack)
+
+
 
 # read the string s
 s=input()
@@ -14,7 +33,7 @@ l=len(s)
 for i in range(l):
     obj.pushCharacter(s[i])
     obj.enqueueCharacter(s[i])
-    
+# obj.printQS()
 isPalindrome=True
 '''
 pop the top character from stack
