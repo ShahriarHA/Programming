@@ -11,27 +11,23 @@ class Multiset:
         self.elements = {}
 
     def add(self, val):
-        # Adds one occurrence of val to the multiset
         if val in self.elements:
-            self.elements[val] += 1
+            self.elements[val] = self.elements[val] + 1
         else:
             self.elements[val] = 1
 
     def remove(self, val):
-        # Removes one occurrence of val from the multiset, if any
         if val in self.elements:
             if self.elements[val] > 1:
                 self.elements[val] -= 1
             else:
                 del self.elements[val]
     def __contains__(self, val):
-    # Returns True when val is in the multiset, else returns False
         if val in self.elements:
             return True
         else:
             return False
     def __len__(self):
-        # Returns the number of elements in the multiset
         return sum(self.elements.values())
 
 if __name__ == '__main__':
